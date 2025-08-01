@@ -1,0 +1,42 @@
+.aside {
+  /* estilos para el contenedor aside */
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.aside__title {
+  /* estilos para el título */
+  text-align: center;
+}
+
+.aside__history {
+  /* contenedor del historial */
+  flex-grow: 1;
+}
+
+.aside__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aside__item {
+  /* estilos para cada ítem del historial */
+  outline: 1px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.aside__button {
+  /* estilos para el botón */
+  background-color: #a52a2a;
+  color: white;
+  padding: 16px;
+  border-radius: 10px;
+}

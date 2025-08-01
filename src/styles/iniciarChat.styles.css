@@ -1,0 +1,56 @@
+/* Estilos para el formulario BEM */
+.iniciar-chat__form {
+  max-width: 400px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.iniciar-chat__title {
+  color: var(--color_principal);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.iniciar-chat__input {
+  border: 2px solid #ccc;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.iniciar-chat__input:hover,
+.iniciar-chat__input:focus,
+.iniciar-chat__input:active {
+  border-color: var(--color_principal);
+  outline: none;
+}
+
+.iniciar-chat__error {
+  color: var(--color_principal);
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.iniciar-chat__submit {
+  background-color: var(--color_principal);
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  background-color: var(--color_principal);
+  text-align: center;
+}
+
+.iniciar-chat__submit:hover,
+.iniciar-chat__submit:focus {
+}
