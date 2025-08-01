@@ -1,0 +1,74 @@
+.input-chat {
+  width: 100%;
+  margin: 2em auto;
+}
+
+.input-chat__mensajes {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-chat__mensaje {
+  margin-bottom: 0.5em;
+}
+
+.input-chat__mensaje--usuario {
+  width: fit-content;
+  align-self: flex-end;
+  text-align: right;
+  color: rgb(0, 110, 255);
+}
+
+.input-chat__mensaje--asistente {
+  color: var(--color_principal);
+}
+
+.input-chat__mensaje--usuario .input-chat__rol {
+  color: #555;
+}
+
+.input-chat__mensaje--asistente .input-chat__rol {
+  color: #555;
+}
+
+.input-chat__form {
+  display: flex;
+  gap: 0.5em;
+}
+
+.input-chat__input {
+  flex: 1;
+  border: 2px solid #ccc;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.input-chat__input:hover,
+.input-chat__input:focus,
+.input-chat__input:active {
+  border-color: var(--color_principal);
+  outline: none;
+}
+
+.input-chat__submit {
+  background-color: var(--color_principal);
+  color: #fff;
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.input-chat__submit:hover,
+.input-chat__submit:focus {
+  background-color: #7a1e1e;
+}

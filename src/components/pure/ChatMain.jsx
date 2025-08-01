@@ -1,7 +1,7 @@
-// ChatMain.jsx
 import React, { useState } from "react";
 import IniciarChat from "../forms/IniciarChat.jsx";
 import InputChat from "../forms/InputChat.jsx";
+import "../../styles/chatmain.styles.css";
 
 const ChatMain = () => {
   const [chatIniciado, setChatIniciado] = useState(false);
@@ -26,11 +26,15 @@ const ChatMain = () => {
   };
 
   return (
-    <div>
+    <div className="chat-main">
       {!chatIniciado ? (
-        <IniciarChat onIniciarChat={manejarInicioChat} />
+        <div className="chat-main__inicio">
+          <IniciarChat onIniciarChat={manejarInicioChat} />
+        </div>
       ) : (
-        <InputChat mensajes={mensajes} setMensajes={setMensajes} />
+        <div className="chat-main__chat">
+          <InputChat mensajes={mensajes} setMensajes={setMensajes} />
+        </div>
       )}
     </div>
   );

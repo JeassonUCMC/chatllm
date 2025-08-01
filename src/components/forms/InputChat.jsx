@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../styles/inputChat.styles.css";
 
 const InputChat = ({ mensajes, setMensajes }) => {
   const [input, setInput] = useState("");
@@ -20,31 +21,32 @@ const InputChat = ({ mensajes, setMensajes }) => {
   };
 
   return (
-    <div>
-      <div
-        style={{
-          minHeight: "200px",
-          border: "1px solid #ccc",
-          padding: "1rem",
-          marginBottom: "1rem",
-        }}
-      >
+    <div className="input-chat">
+      <div className="input-chat__mensajes">
         {mensajes.map((msg, idx) => (
-          <div key={idx}>
-            <strong>{msg.rol === "usuario" ? "Tú:" : "Asistente:"}</strong>{" "}
+          <div
+            key={idx}
+            className={`input-chat__mensaje input-chat__mensaje--${msg.rol}`}
+          >
+            <strong className="input-chat__rol">
+              {msg.rol === "usuario" ? "Tú:" : "Asistente:"}
+            </strong>{" "}
             {msg.texto}
           </div>
         ))}
       </div>
 
-      <form onSubmit={manejarEnvio}>
+      <form className="input-chat__form" onSubmit={manejarEnvio}>
         <input
+          className="input-chat__input"
           type="text"
           placeholder="Escribe tu mensaje aquí..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit">Enviar</button>
+        <button className="input-chat__submit" type="submit">
+          Enviar
+        </button>
       </form>
     </div>
   );

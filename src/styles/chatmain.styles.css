@@ -1,0 +1,14 @@
+.chat-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: azure;
+  flex: 1;
+}
+
+.chat-main__inicio,
+.chat-main__chat {
+  width: 100%;
+  background-color: aqua;
+}
