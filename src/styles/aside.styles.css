@@ -1,10 +1,12 @@
 .aside {
   /* estilos para el contenedor aside */
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   padding: 16px;
   gap: 16px;
+  min-width: 200px;
+  border: 1px solid #ccc;
 }
 
 .aside__title {
@@ -38,5 +40,5 @@
   background-color: #a52a2a;
   color: white;
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 16px;
 }

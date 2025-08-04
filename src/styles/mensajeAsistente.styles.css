@@ -1,0 +1,41 @@
+.mensaje-asistente {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: "Segoe UI", sans-serif;
+  white-space: pre-wrap;
+}
+
+.mensaje-asistente pre {
+  background: #f0f0f0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.mensaje-asistente code {
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+}
+
+.mensaje-asistente p code {
+  background: #2b2b2b00;
+  padding: 0.25rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(0, 0, 0);
+}
+
+.mensaje-asistente h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.mensaje-asistente strong {
+  font-weight: bold;
+  color: #222;
+}

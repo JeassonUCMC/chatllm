@@ -1,32 +1,79 @@
 .input-chat {
   width: 100%;
-  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .input-chat__mensajes {
   min-height: 200px;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  /* border: 1px solid #ccc; */
   background: #fff;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  padding: 16px;
 }
 
 .input-chat__mensaje {
   margin-bottom: 0.5em;
+  max-width: 80%;
 }
+
+/* En inputChat.styles.css
+.input-chat__mensaje pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 1em 0;
+  font-family: "Fira Code", monospace;
+}
+
+.input-chat__mensaje code {
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  white-space: normal;
+  background-color: #2d2d2d;
+}
+
+.input-chat__mensaje strong {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.05em;
+}
+
+.input-chat__mensaje p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.input-chat__mensaje h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+} */
 
 .input-chat__mensaje--usuario {
   width: fit-content;
   align-self: flex-end;
   text-align: right;
-  color: rgb(0, 110, 255);
+  color: black;
+  background-color: #f8f8f8;
+  padding: 16px;
+  border-radius: 16px;
 }
 
 .input-chat__mensaje--asistente {
-  color: var(--color_principal);
+  color: black;
 }
 
 .input-chat__mensaje--usuario .input-chat__rol {
@@ -40,13 +87,17 @@
 .input-chat__form {
   display: flex;
   gap: 0.5em;
+  padding: 16px;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
 }
 
 .input-chat__input {
   flex: 1;
   border: 2px solid #ccc;
   padding: 0.5em 1em;
-  border-radius: 4px;
+  border-radius: 16px;
   transition: border-color 0.2s;
 }
 
@@ -62,7 +113,7 @@
   color: #fff;
   border: none;
   padding: 0.5em 1.2em;
-  border-radius: 4px;
+  border-radius: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;

@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../styles/inputChat.styles.css";
+import MensajeAsistente from "../pure/MensajeAsistente.jsx";
+import { generarRespuestaLLM } from "../../api/generarRespuestaLLM.js";
+import ListaMensajes from "../pure/ListaMensajes.jsx";
 
 const InputChat = ({ mensajes, setMensajes }) => {
+  const finDeMensajesRef = useRef(null);
+
   const [input, setInput] = useState("");
 
   const manejarEnvio = async (e) => {
@@ -9,35 +14,33 @@ const InputChat = ({ mensajes, setMensajes }) => {
     if (!input.trim()) return;
 
     const nuevoMensajeUsuario = { rol: "usuario", texto: input };
+    setMensajes((prev) => [...prev, nuevoMensajeUsuario]);
+    setInput("");
+    const respuestaLLM = await generarRespuestaLLM(input);
+    console.log(respuestaLLM.response);
 
     // Simula respuesta del modelo o backend
     const respuesta = {
       rol: "asistente",
-      texto: `Gracias por tu mensaje: "${input}". Estoy procesándolo.`,
+      texto: respuestaLLM.response || "Lo siento, no tengo una respuesta.",
     };
 
-    setMensajes((prev) => [...prev, nuevoMensajeUsuario, respuesta]);
-    setInput("");
+    setMensajes((prev) => [...prev, respuesta]);
   };
+
+  useEffect(() => {
+    finDeMensajesRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [mensajes]);
 
   return (
     <div className="input-chat">
       <div className="input-chat__mensajes">
-        {mensajes.map((msg, idx) => (
-          <div
-            key={idx}
-            className={`input-chat__mensaje input-chat__mensaje--${msg.rol}`}
-          >
-            <strong className="input-chat__rol">
-              {msg.rol === "usuario" ? "Tú:" : "Asistente:"}
-            </strong>{" "}
-            {msg.texto}
-          </div>
-        ))}
+        <ListaMensajes mensajes={mensajes} />
+        <div ref={finDeMensajesRef} />
       </div>
 
       <form className="input-chat__form" onSubmit={manejarEnvio}>
-        <input
+        <textarea
           className="input-chat__input"
           type="text"
           placeholder="Escribe tu mensaje aquí..."

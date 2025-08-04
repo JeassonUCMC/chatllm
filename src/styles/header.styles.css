@@ -6,4 +6,6 @@
   color: white;
   font-size: 34px;
   font-weight: 900;
+  position: sticky;
+  top: 0;
 }
